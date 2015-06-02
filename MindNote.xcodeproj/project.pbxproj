@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		06363FB71AEB873F00DD1418 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 06363FB61AEB873F00DD1418 /* libsqlite3.0.dylib */; };
 		06608B621AAAB042002758E9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 06608B611AAAB042002758E9 /* main.m */; };
 		06608B651AAAB042002758E9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 06608B641AAAB042002758E9 /* AppDelegate.m */; };
 		06608B681AAAB042002758E9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06608B671AAAB042002758E9 /* ViewController.m */; };
@@ -14,6 +15,8 @@
 		06608B6D1AAAB042002758E9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06608B6C1AAAB042002758E9 /* Images.xcassets */; };
 		06608B701AAAB042002758E9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06608B6E1AAAB042002758E9 /* LaunchScreen.xib */; };
 		06608B7C1AAAB042002758E9 /* MindNoteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 06608B7B1AAAB042002758E9 /* MindNoteTests.m */; };
+		06608B871AAAB689002758E9 /* MindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06608B861AAAB689002758E9 /* MindViewController.m */; };
+		06DC077A1B12FF4000F1EEDE /* EditingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06DC07791B12FF4000F1EEDE /* EditingViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		06363FB61AEB873F00DD1418 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		06608B5C1AAAB042002758E9 /* MindNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MindNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06608B601AAAB042002758E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		06608B611AAAB042002758E9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -40,6 +44,10 @@
 		06608B751AAAB042002758E9 /* MindNoteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MindNoteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		06608B7A1AAAB042002758E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		06608B7B1AAAB042002758E9 /* MindNoteTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MindNoteTests.m; sourceTree = "<group>"; };
+		06608B851AAAB689002758E9 /* MindViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MindViewController.h; sourceTree = "<group>"; };
+		06608B861AAAB689002758E9 /* MindViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MindViewController.m; sourceTree = "<group>"; };
+		06DC07781B12FF4000F1EEDE /* EditingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditingViewController.h; sourceTree = "<group>"; };
+		06DC07791B12FF4000F1EEDE /* EditingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditingViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06363FB71AEB873F00DD1418 /* libsqlite3.0.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +72,7 @@
 		06608B531AAAB042002758E9 = {
 			isa = PBXGroup;
 			children = (
+				06363FB61AEB873F00DD1418 /* libsqlite3.0.dylib */,
 				06608B5E1AAAB042002758E9 /* MindNote */,
 				06608B781AAAB042002758E9 /* MindNoteTests */,
 				06608B5D1AAAB042002758E9 /* Products */,
@@ -85,6 +95,10 @@
 				06608B641AAAB042002758E9 /* AppDelegate.m */,
 				06608B661AAAB042002758E9 /* ViewController.h */,
 				06608B671AAAB042002758E9 /* ViewController.m */,
+				06608B851AAAB689002758E9 /* MindViewController.h */,
+				06608B861AAAB689002758E9 /* MindViewController.m */,
+				06DC07781B12FF4000F1EEDE /* EditingViewController.h */,
+				06DC07791B12FF4000F1EEDE /* EditingViewController.m */,
 				06608B691AAAB042002758E9 /* Main.storyboard */,
 				06608B6C1AAAB042002758E9 /* Images.xcassets */,
 				06608B6E1AAAB042002758E9 /* LaunchScreen.xib */,
@@ -221,7 +235,9 @@
 			files = (
 				06608B681AAAB042002758E9 /* ViewController.m in Sources */,
 				06608B651AAAB042002758E9 /* AppDelegate.m in Sources */,
+				06608B871AAAB689002758E9 /* MindViewController.m in Sources */,
 				06608B621AAAB042002758E9 /* main.m in Sources */,
+				06DC077A1B12FF4000F1EEDE /* EditingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +430,7 @@
 				06608B811AAAB042002758E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		06608B821AAAB042002758E9 /* Build configuration list for PBXNativeTarget "MindNoteTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +439,7 @@
 				06608B841AAAB042002758E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
