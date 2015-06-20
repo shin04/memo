@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0619DA4B1B354692008BC488 /* kokubanB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0619DA4A1B354689008BC488 /* kokubanB.ttf */; };
 		06363FB71AEB873F00DD1418 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 06363FB61AEB873F00DD1418 /* libsqlite3.0.dylib */; };
 		06608B621AAAB042002758E9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 06608B611AAAB042002758E9 /* main.m */; };
 		06608B651AAAB042002758E9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 06608B641AAAB042002758E9 /* AppDelegate.m */; };
@@ -16,7 +17,10 @@
 		06608B701AAAB042002758E9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06608B6E1AAAB042002758E9 /* LaunchScreen.xib */; };
 		06608B7C1AAAB042002758E9 /* MindNoteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 06608B7B1AAAB042002758E9 /* MindNoteTests.m */; };
 		06608B871AAAB689002758E9 /* MindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06608B861AAAB689002758E9 /* MindViewController.m */; };
+		068E83671B2707B500B1FD4F /* bord.png in Resources */ = {isa = PBXBuildFile; fileRef = 068E83661B2707B500B1FD4F /* bord.png */; };
 		06DC077A1B12FF4000F1EEDE /* EditingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06DC07791B12FF4000F1EEDE /* EditingViewController.m */; };
+		06FE4BDA1B29A6ED00401C92 /* magnet.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 06FE4BD91B29A6ED00401C92 /* magnet.mp3 */; };
+		06FE4BDC1B29AEE800401C92 /* paper.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 06FE4BDB1B29AEE800401C92 /* paper.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0619DA4A1B354689008BC488 /* kokubanB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = kokubanB.ttf; sourceTree = "<group>"; };
 		06363FB61AEB873F00DD1418 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		06608B5C1AAAB042002758E9 /* MindNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MindNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06608B601AAAB042002758E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -46,8 +51,11 @@
 		06608B7B1AAAB042002758E9 /* MindNoteTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MindNoteTests.m; sourceTree = "<group>"; };
 		06608B851AAAB689002758E9 /* MindViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MindViewController.h; sourceTree = "<group>"; };
 		06608B861AAAB689002758E9 /* MindViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MindViewController.m; sourceTree = "<group>"; };
+		068E83661B2707B500B1FD4F /* bord.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bord.png; sourceTree = "<group>"; };
 		06DC07781B12FF4000F1EEDE /* EditingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditingViewController.h; sourceTree = "<group>"; };
 		06DC07791B12FF4000F1EEDE /* EditingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditingViewController.m; sourceTree = "<group>"; };
+		06FE4BD91B29A6ED00401C92 /* magnet.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = magnet.mp3; sourceTree = "<group>"; };
+		06FE4BDB1B29AEE800401C92 /* paper.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = paper.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +99,10 @@
 		06608B5E1AAAB042002758E9 /* MindNote */ = {
 			isa = PBXGroup;
 			children = (
+				0619DA4A1B354689008BC488 /* kokubanB.ttf */,
+				06FE4BD91B29A6ED00401C92 /* magnet.mp3 */,
+				06FE4BDB1B29AEE800401C92 /* paper.mp3 */,
+				068E83661B2707B500B1FD4F /* bord.png */,
 				06608B631AAAB042002758E9 /* AppDelegate.h */,
 				06608B641AAAB042002758E9 /* AppDelegate.m */,
 				06608B661AAAB042002758E9 /* ViewController.h */,
@@ -213,9 +225,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0619DA4B1B354692008BC488 /* kokubanB.ttf in Resources */,
 				06608B6B1AAAB042002758E9 /* Main.storyboard in Resources */,
 				06608B701AAAB042002758E9 /* LaunchScreen.xib in Resources */,
+				068E83671B2707B500B1FD4F /* bord.png in Resources */,
 				06608B6D1AAAB042002758E9 /* Images.xcassets in Resources */,
+				06FE4BDA1B29A6ED00401C92 /* magnet.mp3 in Resources */,
+				06FE4BDC1B29AEE800401C92 /* paper.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,7 +379,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MindNote/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MindNote;
 			};
 			name = Debug;
 		};
@@ -373,7 +389,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MindNote/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MindNote;
 			};
 			name = Release;
 		};
@@ -391,7 +407,7 @@
 				);
 				INFOPLIST_FILE = MindNoteTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MindNoteTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MindNote.app/MindNote";
 			};
 			name = Debug;
@@ -406,7 +422,7 @@
 				);
 				INFOPLIST_FILE = MindNoteTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MindNoteTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MindNote.app/MindNote";
 			};
 			name = Release;

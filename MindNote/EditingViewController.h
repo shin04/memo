@@ -11,10 +11,9 @@
 
 @interface EditingViewController : UIViewController
 <UITextFieldDelegate, UITextViewDelegate>
-{
-    IBOutlet UITextField *title;
-    IBOutlet UITextView *text;
-}
+
+@property IBOutlet UITextField *titleTextField;
+@property IBOutlet UITextView *text;
 
 - (IBAction)saveData:(id)sender;
 - (IBAction)back:(id)sender;

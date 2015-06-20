@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "EditingViewController.h"
+#import <AudioToolbox/AudioServices.h>
 
 @interface MindViewController : UIViewController <UITextFieldDelegate>
 {
@@ -21,6 +22,8 @@
     NSMutableArray *Y_Array;
     float re_X;
     float re_Y;
+    
+    SystemSoundID sound;
 }
 - (IBAction)newMind:(id)sender;
 - (IBAction)delMind:(id)sender;

@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:MindNote.xcodeproj">
+      location = "self:/Users/kajiwaradaishin/Desktop/MindNote/MindNote.xcodeproj">
    </FileRef>
 </Workspace>

@@ -44,15 +44,33 @@
     [appDelegate.userDefaults floatForKey:@"X_Key"];
     [appDelegate.userDefaults floatForKey:@"Y_Key"];
     [appDelegate.userDefaults integerForKey:@"Num_Key"];
-    for (int c = 0; c < TagNumber - 1; c++) {
+    
+    NSLog(@"TagNumber = %d", TagNumber);
+    
+    //view上のbuttonを全て削除
+    for (int c = 0; c < TagNumber; c++) {
+        [[self.view viewWithTag:c + 1] removeFromSuperview];
+    }
+    
+    for (int c = 0; c < TagNumber; c++) {
         //保存されている座標にbuttonを作成
         UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         button.frame = CGRectMake([[X_Array objectAtIndex:c] floatValue], [[Y_Array objectAtIndex:c] floatValue], 40, 60);
-        [button setTitle:@"NEW" forState:UIControlStateNormal];
-        button.tag = TagNumber;
+        
+        //文字を設定
+        button.tintColor = [UIColor whiteColor];
+        [button setTitle:[appDelegate.titleArray objectAtIndex:c] forState:UIControlStateNormal];
+        
+        //buttonにタグを設定
+        button.tag = c + 1;
+        NSLog(@"button.tag = %ld", (long)button.tag);
+        
+        //buttonを追加
         [self.view addSubview:button];
-        TagNumber ++;
+        
         [appDelegate.userDefaults setInteger:TagNumber forKey:@"Num_Key"];
+        [button addTarget:self
+                   action:@selector(hoge:) forControlEvents:UIControlEventTouchUpInside];
     }
 }
 
@@ -73,18 +91,33 @@
 
 - (IBAction)delMind:(id)sender{
     if (DellNumber < 0) {
-        buttonLabel.text = @"オブジェクトを選択してください";
+        buttonLabel.text = @"選択してください";
     }else{
-        //MARK:ここを書いてる途中
-        UIButton *button = (UIButton*)[self.view viewWithTag:DellNumber];
-        //???:view自体が消える
-        [button removeFromSuperview];
+        AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+        [appDelegate.titleArray removeObjectAtIndex:DellNumber];
+        [appDelegate.textArray removeObjectAtIndex:DellNumber];
+        [X_Array removeObjectAtIndex:DellNumber];
+        [Y_Array removeObjectAtIndex:DellNumber];
+        [[self.view viewWithTag:DellNumber] removeFromSuperview];
     }
 }
 
 - (IBAction)edit:(id)sender{
-    EditingViewController *editing=[self.storyboard instantiateViewControllerWithIdentifier:@"editing"];
-    [self presentViewController:editing animated:NO completion:nil];
+    if (DellNumber > 0) {
+        // サウンドの準備
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"paper" ofType:@"mp3"];
+        NSURL *url = [NSURL fileURLWithPath:path];
+        AudioServicesCreateSystemSoundID((CFURLRef)CFBridgingRetain(url), &sound);
+        
+        // サウンドの再生
+        AudioServicesPlaySystemSound(sound);
+    
+        EditingViewController *editing=[self.storyboard instantiateViewControllerWithIdentifier:@"editing"];
+        [self presentViewController:editing animated:NO completion:nil];
+    } else {
+        buttonLabel.text = @"選択してください";
+    }
+    
 }
 
 //ボタン作成
@@ -92,45 +125,42 @@
     UIButton *button=[UIButton buttonWithType:UIButtonTypeRoundedRect];
     //ボタンを表示する横位置、縦位置、横幅、縦幅を設定する
     button.frame = CGRectMake(Coordinate_X, Coordinate_Y, 40, 60);
-    //文字を表示
+    
+    //タイトルを設定
+    button.tintColor = [UIColor whiteColor];
     [button setTitle:@"NEW" forState:UIControlStateNormal];
-    //タグ設定(ボタン識別)
+    
+    // サウンドの準備
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"magnet" ofType:@"mp3"];
+    NSURL *url = [NSURL fileURLWithPath:path];
+    AudioServicesCreateSystemSoundID((CFURLRef)CFBridgingRetain(url), &sound);
+    
+    // サウンドの再生
+    AudioServicesPlaySystemSound(sound);
+
+    //タグ設定
+    TagNumber ++;
     button.tag = TagNumber;
+    
     //Viewにボタンを追加して表示する。
     [self.view addSubview:button];
     
     AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     appDelegate.userDefaults = [NSUserDefaults standardUserDefaults];
     
-    TagNumber ++;
     [appDelegate.userDefaults setInteger:TagNumber forKey:@"Num_Key"];
     
-    /*
-    if (!appDelegate.titleArray) {
-        appDelegate.titleArray = [[NSMutableArray array] init];
-    }
+    [appDelegate.titleArray insertObject:@"題名" atIndex:button.tag-1];
+    [appDelegate.textArray insertObject:@"内容" atIndex:button.tag-1];
+    //NSLog(@"%@", [appDelegate.titleArray objectAtIndex:button.tag]);
     
-    if (!appDelegate.textArray) {
-        appDelegate.textArray = [[NSMutableArray array] init];
-    }
-     */
+    NSLog(@"%ld",(long)button.tag);
+
     
-    [appDelegate.titleArray insertObject:@"題名" atIndex:button.tag];
-    [appDelegate.textArray insertObject:@"内容" atIndex:button.tag];
-    NSLog(@"%@", [appDelegate.titleArray objectAtIndex:button.tag]);
-    
-    /*
-    if (!X_Array) {
-        X_Array = [[NSMutableArray array] init];
-    }
-    
-    if (!Y_Array) {
-        Y_Array = [[NSMutableArray array] init];
-    }
-     */
-    
-    [X_Array insertObject:[NSNumber numberWithInteger:Coordinate_X] atIndex:button.tag];
-    [Y_Array insertObject:[NSNumber numberWithInteger:Coordinate_Y] atIndex:button.tag];
+//    [X_Array addObject:[NSNumber numberWithInteger:Coordinate_X]];
+//    [Y_Array addObject:[NSNumber numberWithInteger:Coordinate_Y]];
+    [X_Array insertObject:[NSNumber numberWithInteger:Coordinate_X] atIndex:button.tag-1];
+    [Y_Array insertObject:[NSNumber numberWithInteger:Coordinate_Y] atIndex:button.tag-1];
     
     [appDelegate.userDefaults setObject:X_Array forKey:@"X_Key"];
     [appDelegate.userDefaults setObject:Y_Array forKey:@"Y_Key"];
@@ -141,7 +171,7 @@
 }
 
 - (void)hoge:(UIButton*)button{
-    NSLog(@"%ld",(long)button.tag);
+    NSLog(@"button.tag = %ld",(long)button.tag);
     //ボタンのタグをdellnumberに代入
     DellNumber = button.tag;
     //ボタンの番号をlabelに表示
