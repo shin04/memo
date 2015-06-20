@@ -62,6 +62,7 @@
         [button setTitle:[appDelegate.titleArray objectAtIndex:c] forState:UIControlStateNormal];
         
         //buttonにタグを設定
+        //kkk
         button.tag = c + 1;
         NSLog(@"button.tag = %ld", (long)button.tag);
         
